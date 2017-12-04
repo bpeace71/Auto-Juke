@@ -3,10 +3,7 @@
 AutoJuke by Team8
 
 //Team Members//
-Brian Peace
-Corey Sullivan
-Gregory Brown
-Mitch Vassar
+Brian Peace, Corey Sullivan, Gregory Brown, and Mitch Vassar
 
 //Project Description//
 AutoJuke is a browser-based jukebox that incorporates Spotify and Gracenote APIs to provide users with an endless playlist that adheres to tempo and key parameters set by the user's unput.  In doing so, AutoJuke provides the user with a seamless and essentially endless song, perfect for anything from study to providing party atmosphere.
