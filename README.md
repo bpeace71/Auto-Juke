@@ -1,6 +1,5 @@
-# Auto-Juke
-
-<h1>AutoJuke by Team8</h1>
+<img src="assets/images/amazargemarthalf.jpg">
+<p>by Team8</p>
 
 <h3>//Team Members//</h3>
 <ul>
@@ -11,13 +10,13 @@
 </ul>
 
 <h3>//Project Description//</h3>
-<p>AutoJuke is a browser-based jukebox that incorporates Spotify and Gracenote APIs to provide users with an endless playlist that adheres to tempo and key parameters set by the user's unput.  In doing so, AutoJuke provides the user with a seamless and essentially endless song, perfect for anything from study to providing party atmosphere.</p>
+<p>Amazargemart (Ah-muh-zahr-geh-mart) is a single-destination browser-based price comparison tool comparing lowest possible prices of an item offered by Amazon, Target, and Walmart.  Amazargemart aims to be minimalist and easy for the user to access.</p>
 
 <h3>//Sketch of Final Product//</h3>
-<p>The AutoJuke site should be single-page, with an input for song-searching, a playbar for the user to observe how far along in the song they are, and an object below the playbar indicating song information like Artist, Album, Release Date, Release Label, tempo, and key.  The site itself would be minimalist and mobile-friendly, encouraging users to stream their endless mix essentially anywhere they go.</p>
+<p>Amazargemart is a single-page utility, with a search bar for input of the item the user wishes to price-check.  Prices for the item will be listed from lowest to highest along with their respective sources in a separate object.</p>
 
 <h3>//APIs to be Used//</h3>
-<p>Spotify and Gracenote APIs will provide the backbone of our application, with Spotify allowing AutoJuke to analyze and break down the key and tempo of a song, and Gracenote providing the application and the user with comprehensive metadata related to the song currently being played.</p>
+<p>Amazon, Target, and Walmart all have public APIs that allow for item search, and as such all three will be integrated into Amazargemart's functionality.</p>
 
 <h3>//Breakdown of Tasks//</h3>
 <ul>
