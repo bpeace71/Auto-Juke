@@ -2,8 +2,9 @@
 	text-align: center;
 }
 
-.topnav
-	font-color: #fff;
+.topnav a{
+	color: #fff;
+}
 
 /*Contact sectiom*/
 .content-header{
