@@ -2,6 +2,9 @@
 	text-align: center;
 }
 
+.topnav
+	font-color: #fff;
+
 /*Contact sectiom*/
 .content-header{
   font-family: 'Oleo Script', cursive;
