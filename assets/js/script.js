@@ -1,17 +1,36 @@
-var spotifyAuthKey = "e5f2da67f54748c891f1dd6828bac8c9"
-var gracenoteAuthKey = "678257715-1B3FE307321B53EF62CF2A13AFB0710F"
+function findLocationWithZip() {
 
-var queryURLBase = "https://api.spotify.com/v1/audio-features/06AKEBrKUckW0KREUWRnvT" -H "Authorization: Bearer {your access token}"
-
-$.ajax({
-  type: "POST",
-  beforeSend: function(request) {
-    request.setRequestHeader("Authority", authorizationToken);
-  },
-  url: queryURLBase,
-  data: "json=" + escape(JSON.stringify(createRequestObject)),
-  processData: false,
-  success: function(msg) {
-    $("#results").append("The result =" + StringifyPretty(msg));
+  var zipCode = "30080"
+    var zipKey = "zItY5bAzQcwNyA8gRZbiWmh1VHPF6bGkr9IdtR7ffhZFZclIYe8NmieX5OuGkjCl"
+    var latitude = "33.748995"
+    var longitude = "-84.387982"
+    var queryZipURL = "https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/" + zipKey + "/info.json/" + zipCode + "/degrees"
+    
+    $.ajax({
+      url: queryZipURL,
+      method: "GET"
+    }).done(function(response) {
+      console.log(response)
+    });
   }
-});
+
+findLocationWithZip()
+
+var zipCode = "30080"
+var latitude = "33.748995"
+var longitude = "-84.387982"
+
+function searchWeather() {
+
+    var weatherKey = "988e9c01c043c5977d3b37bfaad72e6d"
+    var queryURLTwo = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + weatherKey + "/" + latitude +"," + longitude + ""
+    
+    $.ajax({
+      url: queryURLTwo,
+      method: "GET"
+    }).done(function(response) {
+      console.log(response)
+    });
+  }
+
+searchWeather()
