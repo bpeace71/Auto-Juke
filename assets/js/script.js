@@ -1,5 +1,42 @@
 $( document ).ready(function() {
-debugger;
+//debugger;
+  $("#inputBox").keyup(function(event) {
+     if (event.keyCode === 13) {
+         $("#button").click();
+     }
+  });
+
+  var zipCode = $("#inputBox").val();
+  //var latitude = "#"
+  //var longitude = "#"
+  $("button").on("click", function findLocationWithZip() {
+     event.preventDefault();  
+     var zipCode = $("#inputBox").val();
+     var zipKey = "zItY5bAzQcwNyA8gRZbiWmh1VHPF6bGkr9IdtR7ffhZFZclIYe8NmieX5OuGkjCl";
+     var weatherKey = "23a22b2c326490bd56054c01f0eb55d2";
+
+     var queryZipURL = "https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/" + zipKey + "/info.json/" + zipCode + "/degrees";
+
+     $.ajax({
+       url: queryZipURL,
+       method: "GET"
+     }).done(function(zipResponse) {
+       console.log(zipResponse);
+       console.log(zipResponse.city);
+       console.log(zipResponse.lat);
+       console.log(zipResponse.lng);
+       latitude = (zipResponse.lat);
+       longitude = (zipResponse.lng);
+  //Dark Sky converts latitude and Longitude and spits out temperature.
+     var queryURLTwo = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + weatherKey + "/" + latitude +"," + longitude + "";
+     $.ajax({
+       url: queryURLTwo,
+       method: "GET"
+     }).done(function(darkSkyResponse) {
+       console.log(darkSkyResponse)
+       console.log(darkSkyResponse.currently.temperature);
+       currentTemp = (darkSkyResponse.currently.temperature)
+
   // Your Access Key ID, as taken from the Your Account page
   var access_key_id = "AKIAIYUBWASGMNBR5AAQ";
 
@@ -9,8 +46,8 @@ debugger;
   // The region you are interested in
   var endpoint = "webservices.amazon.com";
 
-  var temperature = 41;
-  var keyWord = "Xbox"
+  var temperature = currentTemp;
+  var keyWord = "Mens Winter Clothing"
 
 
   //var summer = 
@@ -21,13 +58,13 @@ debugger;
   //var keyWord = $("#search").val()
   var setKeyWord = function() {
     if (temperature <= 40 && temperature > 40) {
-      var keyWord = "Best Winter Clothing";
+      var keyWord = "Mens Winter Clothing";
     } else if( temperature <= 60 && temperature > 41 ) {
-      var keyWord = "Best Fall Clothing";
+      var keyWord = "Mens Fall Clothing";
     } else if( temperature <= 80 && temperature > 61 ) {
-      var keyWord = "Best Spring Clothing"
+      var keyWord = "Mens Spring Clothing"
     } else if( temperature <= 110 && temperature > 81 ) {
-      var keyWord = "Best Summer Clothing"
+      var keyWord = "Mens Summer Clothing"
     } else if( temperature <= 1000 && temperature > 111)  {
       var keyWord = "Radiation Suit"
     } else( temperature < 1 ) 
@@ -101,4 +138,7 @@ debugger;
          }
       }
   });
+         });
+     });
+   });
 });
