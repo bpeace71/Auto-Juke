@@ -1,4 +1,4 @@
-<img src="assets/images/amazargemarthalf.jpg">
+<img src="assets/images/seasonsmart.png">
 <p>by Team8</p>
 
 <h3>//Team Members//</h3>
