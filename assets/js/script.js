@@ -30,9 +30,9 @@ debugger;
       var keyWord = "Best Summer Clothing"
     } else if( temperature <= 1000 && temperature > 111)  {
       var keyWord = "Radiation Suit"
-    } else( temperature < 1 ) {
+    } else( temperature < 1 ) 
       var keyWord = "Adult Snow Suit"
-    }
+    
     return keyWord
   }
  
