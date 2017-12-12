@@ -110,10 +110,12 @@ $( document ).ready(function() {
               $("#amazonInput").prepend("<div>" + "Price: " + amazonPrice + "</div>");
               $("#amazonInput").prepend("<a " + "href='" + amazonPage + "'> <img "  + "src=" + results[i].ImageSets.ImageSet["0"].MediumImage.URL + " >" + "</a>");
               $("#amazonInput").prepend("<div>" + amazonName + "</div>");
+              $("#amazonInput").prepend("<br>");
             } else { 
               $("#amazonInput").prepend("<div>" + "Price: " + amazonPrice + "</div>");
               $("#amazonInput").prepend("<a " + "href='" + amazonPage + "'> <img "  + "src=" + results[i].ImageSets.ImageSet.MediumImage.URL + " >" + "</a>");
               $("#amazonInput").prepend("<div>" + amazonName + "</div>");
+              $("#amazonInput").prepend("<br>");
             }
 
          }
