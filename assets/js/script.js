@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-
+debugger;
   // Your Access Key ID, as taken from the Your Account page
   var access_key_id = "AKIAIYUBWASGMNBR5AAQ";
 
@@ -9,8 +9,26 @@ $( document ).ready(function() {
   // The region you are interested in
   var endpoint = "webservices.amazon.com";
 
+  var temperature = 41;
+  var keyWord = "Xbox"
+
+
+  //var summer = 
+  //var spring =
+  //var winter = 
+  //var fallout =
+
   //var keyWord = $("#search").val()
-  var keyWord = "cat scratch pole"
+  var setKeyWord = function() {
+    if (temperature <= 40 && temperature > 40) {
+      var keyWord = "Best Winter Clothing";
+    } else if( temperature <= 60 && temperature > 41 ) {
+      var keyWord = "Best Spring Clothing";
+    }
+    return keyWord
+  }
+ 
+  setKeyWord(keyWord);
 
   var uri = "/onca/xml";
 
@@ -61,18 +79,18 @@ $( document ).ready(function() {
       dataType: 'xml',
       success: function(response) {
           var json = $.xml2json(response);
-          var results = json["#document"].ItemSearchResponse.Items;
-          console.log(results.Item);
-          for (var i = 0; i < results.Item.length; i++) {
-            results.Item[i];
-            console.log(results.Item[i]);
-            
+          var results = json["#document"].ItemSearchResponse.Items.Item;
+          console.log(results);
+
+          for (var i = 0; i < 4; i++) {
+            var amazonImg = results[i].ImageSets.ImageSet;
+            if (Array.isArray(amazonImg)) {
+              $("#amazonInput").prepend("<img " + "src=" + results[i].ImageSets.ImageSet["0"].MediumImage.URL + " >");
+            } else { 
+              $("#amazonInput").prepend("<img " + "src=" + results[i].ImageSets.ImageSet.MediumImage.URL + " >");
+            }
+
          }
       }
   });
-
-
-  
-
-
 });
