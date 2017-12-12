@@ -10,13 +10,13 @@
 </ul>
 
 <h3>//Project Description//</h3>
-<p>Amazargemart (Ah-muh-zahr-geh-mart) is a single-destination browser-based price comparison tool comparing lowest possible prices of an item offered by Amazon, Target, and Walmart.  Amazargemart aims to be minimalist and easy for the user to access.</p>
+<p>SeasonSmart is a browser-based tool designed to allow users to obtain ideas and prepare for the season.  SeasonSmart utilizes the Dark Sky API to pull the current weather of the user's ZIP code and provide links to amazon products tagged with the current season.</p>
 
 <h3>//Sketch of Final Product//</h3>
-<p>Amazargemart is a single-page utility, with a search bar for input of the item the user wishes to price-check.  Prices for the item will be listed from lowest to highest along with their respective sources in a separate object.</p>
+<p>SeasonSmart is a single-page utility, with a search bar for input of the ZIP Code the user wishes to price-check.  items will be displayed based ojn which season it currently is, with season relegated to certain temperature thresholds.</p>
 
 <h3>//APIs to be Used//</h3>
-<p>Amazon, Target, and Walmart all have public APIs that allow for item search, and as such all three will be integrated into Amazargemart's functionality.</p>
+<p>ZIP to Lat/Long, Dark Sky, and Amazon APIs will all be put to use with this application.</p>
 
 <h3>//Breakdown of Tasks//</h3>
 <ul>
