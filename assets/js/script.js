@@ -23,7 +23,15 @@ debugger;
     if (temperature <= 40 && temperature > 40) {
       var keyWord = "Best Winter Clothing";
     } else if( temperature <= 60 && temperature > 41 ) {
-      var keyWord = "Best Spring Clothing";
+      var keyWord = "Best Fall Clothing";
+    } else if( temperature <= 80 && temperature > 61 ) {
+      var keyWord = "Best Spring Clothing"
+    } else if( temperature <= 110 && temperature > 81 ) {
+      var keyWord = "Best Summer Clothing"
+    } else if( temperature <= 1000 && temperature > 111)  {
+      var keyWord = "Radiation Suit"
+    } else( temperature < 1 ) {
+      var keyWord = "Adult Snow Suit"
     }
     return keyWord
   }
