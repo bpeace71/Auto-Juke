@@ -41,12 +41,9 @@ $( document ).ready(function() {
   // The region you are interested in
   var endpoint = "webservices.amazon.com";
   var temperature = currentTemp;
-  var keyWord = "Mens Winter Clothing"
-  //var summer = 
-  //var spring =
-  //var winter = 
-  //var fallout =
-  //var keyWord = $("#search").val()
+  var keyWord = "Most Popular Winter Items"
+      
+
   var setKeyWord = function() {
     if (temperature <= 40 && temperature > 40) {
       var keyWord = "Mens Winter Clothing";
@@ -104,13 +101,21 @@ $( document ).ready(function() {
           var json = $.xml2json(response);
           var results = json["#document"].ItemSearchResponse.Items.Item;
           console.log(results);
-          for (var i = 0; i < 4; i++) {
+          for (var i = 0; i < results.length; i++) {
             var amazonImg = results[i].ImageSets.ImageSet;
+            var amazonPrice = results[i].OfferSummary.LowestNewPrice.FormattedPrice;
+            var amazonName = results[i].ItemAttributes.Title;
+            var amazonPage = results[i].DetailPageURL;
             if (Array.isArray(amazonImg)) {
-              $("#amazonInput").prepend("<img " + "src=" + results[i].ImageSets.ImageSet["0"].MediumImage.URL + " >");
+              $("#amazonInput").prepend("<div>" + "Price: " + amazonPrice + "</div>");
+              $("#amazonInput").prepend("<a " + "href='" + amazonPage + "'> <img "  + "src=" + results[i].ImageSets.ImageSet["0"].MediumImage.URL + " >" + "</a>");
+              $("#amazonInput").prepend("<div>" + amazonName + "</div>");
             } else { 
-              $("#amazonInput").prepend("<img " + "src=" + results[i].ImageSets.ImageSet.MediumImage.URL + " >");
+              $("#amazonInput").prepend("<div>" + "Price: " + amazonPrice + "</div>");
+              $("#amazonInput").prepend("<a " + "href='" + amazonPage + "'> <img "  + "src=" + results[i].ImageSets.ImageSet.MediumImage.URL + " >" + "</a>");
+              $("#amazonInput").prepend("<div>" + amazonName + "</div>");
             }
+
          }
       }
   });
